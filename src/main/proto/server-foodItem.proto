@@ -1,0 +1,17 @@
+
+syntax = "proto3";
+package max.schemas.orders;
+
+option java_multiple_files = true;
+option java_package = "com.max.grpc.orders.proto";
+option java_outer_classname = "FoodProto";
+
+import "shared-foodType.proto";
+
+message FoodItem {
+    string id = 1;
+    string title = 2;
+    FoodType type = 3;
+    float weight = 4;
+    uint32 price = 5;
+}

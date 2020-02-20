@@ -1,0 +1,18 @@
+
+syntax = "proto3";
+package max.schemas.orders;
+
+option java_multiple_files = true;
+option java_package = "com.max.grpc.orders.proto";
+option java_outer_classname = "MenuProto";
+
+import "server-foodItem.proto";
+import "google/protobuf/empty.proto";
+
+message CafeMenu {
+    repeated FoodItem items = 1;
+}
+
+service MenuService {
+    rpc getMenu(google.protobuf.Empty) returns (CafeMenu) {}
+}
