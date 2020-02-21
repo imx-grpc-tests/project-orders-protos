@@ -6,10 +6,17 @@ option java_multiple_files = true;
 option java_package = "com.max.grpc.orders.proto";
 option java_outer_classname = "OrderProto";
 
-import "server-receipt.proto";
+import "food.proto";
 
 message Order {
     repeated string itemIds = 1;
+}
+
+message OrderReceipt {
+    string id = 1;
+    uint64 date = 2;
+    repeated FoodItem items = 3;
+    uint32 totalPrice = 4;
 }
 
 service OrderService {
